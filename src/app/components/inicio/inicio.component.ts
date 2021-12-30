@@ -13,7 +13,7 @@ articulos : any;
   constructor(private http:HttpClient, private router: Router) { }
 
   ngOnInit(): void {
-    this.http.get('http://127.0.0.1/blog/public/api/view_articulos')
+    this.http.get('https://blog-control.herokuapp.com/api/view_articulos')
     .subscribe((res:any) => {
       this.articulos = res.response;
  
