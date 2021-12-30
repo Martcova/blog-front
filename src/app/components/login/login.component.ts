@@ -38,42 +38,61 @@ export class LoginComponent implements OnInit {
   enviarLogin(){
     Swal.fire({
       title: 'Sus datos son correctos?',
+      text: "Revise bien sus credenciales!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Si, Entrar!'
+      confirmButtonText: 'Si, iniciar sesión!',
+      cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire(
-          'Sesion iniciada correctamente!',
-          '',
+          'Correcto!',
+          'Ha iniciado sesión..!!.',
           'success'
         )
-
-        const {email, password} = this.formlogin.value
-        this.ds.enviarCredenciales(email, password)
-        .subscribe(response =>{
-          console.log('sesion iniciada correctamente',response);
-          const {token} = response;
-          const {id} = response;
-          const {rol_id} = response;
-          this.cookie.set('rol_id',rol_id);
-          this.cookie.set('id',id);
-          this.cookie.set('token',token,1,'/');
-          this.router.navigate(['/']);
-         
-        },
-        error =>{
-          console.log('error al iniciar sesion');
-        })
-        
+        this.suscripcion();
       }
-      this.router.navigate(['/']);
     })
+        
 
   
   }
+
+
+  suscripcion(){
+    const {email, password} = this.formlogin.value
+    this.ds.enviarCredenciales(email, password)
+    .subscribe(response =>{
+      console.log('sesion iniciada correctamente',response);
+      const {token} = response;
+      const {id} = response;
+      const {rol_id} = response;
+      this.cookie.set('rol_id',rol_id);
+      this.cookie.set('id',id);
+      this.cookie.set('token',token,1,'/');
+      this.router.navigate(['/']);
+    },
+      error =>{
+      console.log('error al iniciar sesion'); 
+      const err = error
+      this.errorSesion(err);
+    })
+    
+  }
+
+errorSesion(error:any){
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops!!...',
+    text: 'No se pudo iniciar sesión, revisa tus credenciales!',
+    
+  })
+  this.router.navigate(['/header/login']);
+}
+
+
 
 }
  

@@ -25,7 +25,7 @@ articulos : any;
   recortar(){
   //cortar el texto de la descripcion de todos los articulos
   for(let i = 0; i < this.articulos.length; i++){
-    this.articulos[i].descripcion = this.articulos[i].descripcion.substring(0,100) + "...";
+    this.articulos[i].descripcion = this.articulos[i].descripcion.substring(0,1000) + "...";
   }
 }
 
