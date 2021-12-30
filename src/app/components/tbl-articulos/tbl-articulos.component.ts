@@ -22,7 +22,7 @@ export class TblArticulosComponent implements  OnDestroy,OnInit {
         "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
       }
     };
-    this.http.get('http://127.0.0.1/blog/public/api/view_articulos')
+    this.http.get('https://blog-control.herokuapp.com/api/view_articulos')
     .subscribe((res:any) => {
       this.articulos = res.response;
       this.dtTrigger.next();

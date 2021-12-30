@@ -46,7 +46,7 @@ export class AgregaArticuloComponent implements OnInit {
   }
  
  enviarDatosA(){
-  this.dataservice.agregaArticulo('http://127.0.0.1/blog/public/api/articulos', 
+  this.dataservice.agregaArticulo('https://blog-control.herokuapp.com/api/articulos', 
   this.formregistroA.value)
   .subscribe(respuesta => {
     console.log('usuario agregado');

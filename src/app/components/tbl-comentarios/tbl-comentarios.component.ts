@@ -23,7 +23,7 @@ export class TblComentariosComponent implements OnDestroy, OnInit {
       }
      
     };
-    this.http.get('http://127.0.0.1/blog/public/api/view_comentarios')
+    this.http.get('https://blog-control.herokuapp.com/api/view_comentarios')
     .subscribe((res:any) => {
       this.comentarios = res.response;
       
