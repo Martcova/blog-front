@@ -1,0 +1,78 @@
+<app-header></app-header>
+<div class="cardxd card-bodyxd blur shadow-blur mx-3 mx-md-4 mt-n6">
+
+        <div class="container py-4">
+          <div class="row">
+            <div class="col-lg-10 mx-auto d-flex justify-content-center flex-column">
+              <div >
+                <h3 class="text-center card-header " style="background-color: #3f3e59;" >Agregar Articulo</h3>
+              </div>
+         <div class ="card-body card blur " >
+           
+              <form [formGroup]="formregistroA" id="contact-form"  (submit)="enviarDatosA()"  class="form needs-validation" novalidate>
+                <div class="card-body">
+                  <div class="row ">
+                    <section class="py-7">
+                      <div class="container">
+                        <div class="row  py-2">
+                          <div class="col-lg-12  mx-auto">
+
+                            <div class="col-6" >
+                              <label class="form-label">Id del usuario:</label>
+                              <input type="text" class="form-control"   formControlName="user_id" placeholder=" Escribe aqui el titulo del articulo " required>
+                              <div class="invalid-feedback">
+                                Completa el campo correctamente.
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                              <label class="form-label">Titulo del articulo:</label>
+                              <input type="text" class="form-control"   formControlName="nombre" placeholder=" Escribe aqui el titulo del articulo " required>
+                              <div class="invalid-feedback">
+                                Completa el campo correctamente.
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  
+                      <div class="container">
+                        <div class="row  py-2">
+                          <div class="col-lg-12  mx-auto">
+                            <div class="col-12">
+                              <label class="form-label">Descripción del articulo:</label>
+                                <textarea class="form-control" formControlName="descripcion" rows="6"></textarea>
+                              <div class="invalid-feedback">
+                                Completa el campo correctamente.
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                    </section>
+                    
+                  
+             
+                  </div>
+                 
+                  <div class="d-grid gap-2 col-5 mx-auto">
+                    <button class="btn btn-dark my-4" style="background-color: #3f3e59;" name="registrar" type="submit">Crear articulo</button>
+                </div>
+               
+                </div>
+              </form>
+            </div>
+            </div>
+          </div>
+        </div>
+     
+        </div>
+
+    
+
+
+
+
+<app-footer></app-footer>

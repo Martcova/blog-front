@@ -1,0 +1,94 @@
+<app-header></app-header>
+
+<!--inicio formulario registro usuario responsive-->
+<div class="cardxd card-bodyxd blur shadow-blur mx-3 mx-md-4 mt-n6">
+  <section>
+    <div class="container py-4">
+      <div class="row">
+        <div class="col-lg-7 mx-auto d-flex justify-content-center flex-column">
+          <div>
+            <h3
+              class="text-center card-header"
+              style="background-color: #3f3e59;"
+            >
+              GESTIÓN DE USUARIOS
+            </h3>
+          </div>
+          <div class="card-body card blur">
+
+            <form [formGroup]="editarForm" (ngSubmit)="postForm(editarForm.value)" >
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6 offset-3">
+                    <div class="input-group input-group-dynamic mb-4">
+                      <label class="form-label">id:</label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        formControlName="id"
+                        
+                      />
+                      
+                    </div>
+
+                    <div class="input-group input-group-dynamic mb-4">
+                      <label class="form-label">Nombre:</label>
+                      <input
+                        formControlName="name"
+                        class="form-control"
+                        aria-label="name"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 offset-3">
+                    <div class="input-group input-group-dynamic mb-4">
+                      <label class="form-label">Correo:</label>
+                      <input
+                        class="form-control"
+                        aria-label="email"
+                        type="text"
+                        formControlName="email"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 offset-3">
+                    <div class="input-group input-group-dynamic mb-4">
+                      <label class="form-label">Rol:</label>
+                      <input
+                        formControlName="rol_id"
+                        class="form-control"
+                        aria-label="rol"
+                        formControlName="rol_id"
+                      />
+                    </div>
+                  </div>
+                </div>
+              
+
+
+                <div class="d-grid gap-2 d-md-block" style="text-align: center;">
+                  <button  [disabled]="editarForm.invalid" class="btn btn-dark  " name="editar" type="submit">
+                    Editar
+                  </button>
+                  <button   class="btn btn-danger my-4 offset-1 " (click)="eliminar()" name="eliminar" type="button">
+                    Eliminar
+                  </button>
+                </div>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<app-footer></app-footer>

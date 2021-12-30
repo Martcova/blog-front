@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<div class="cardxd card-bodyxd blur shadow-blur mx-3 mx-md-4 mt-n6">
+  <div>
+    <h2 class="text-center card-header" style="background-color: #3f3e59;">
+      Articulos
+    </h2>
+  </div>
+  <div class="row row-cols-1 row-cols-md-2 g-4 p-4">
+    <div class="col" *ngFor ="let a of articulos">
+      <div class="card-body">
+        <h5 class="card-title card-header">{{a.nombre}}</h5>
+        <p class="card-text card-header justify" >
+            {{a.descripcion}}
+        </p>
+        <div class="card-header">
+          <a   class="card-link" (click)="vistaArticulo(a.id)" >Ver mas</a>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+<app-footer></app-footer>
+
