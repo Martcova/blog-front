@@ -9,7 +9,10 @@ import { CookieService } from 'ngx-cookie-service';
   providedIn: 'root'
 })
 export class DataService {
-url :string = "http://127.0.0.1/blog/public/api/"
+url :string = "https://blog-control.herokuapp.com/api/"
+
+//https://blog-control.herokuapp.com/api/users
+
   constructor(private http: HttpClient, private cookie:CookieService) { }
 
 //***************************************************************** */

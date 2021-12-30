@@ -55,7 +55,7 @@ public enviarData(){
         'success'
       )
       
-  this.DataService.post('http://127.0.0.1/blog/public/api/users', 
+  this.DataService.post('https://blog-control.herokuapp.com/api/users', 
   this.formregistro.value)
   .subscribe(respuesta => {
     console.log('usuario agregado');
